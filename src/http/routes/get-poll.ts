@@ -25,15 +25,6 @@ export async function getPoll(app: FastifyInstance) {
       },
     });
 
-    // We can create a pollOption this way but we used the "options" column created by Prisma
-    // To make sure it will make everything together or we would have to use a transaction here
-    // so the poll created would be deleted if something failed below
-    // await prisma.pollOption.createMany({
-    //   data: options.map((option) => {
-    //     return { title: option, pollId: poll.id };
-    //   }),
-    // });
-
     return reply.send({ poll }); // default status code = 200
   });
 }
