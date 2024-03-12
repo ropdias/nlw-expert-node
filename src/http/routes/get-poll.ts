@@ -43,8 +43,6 @@ export async function getPoll(app: FastifyInstance) {
       return obj; // you should always return the obj in reduce()
     }, {} as Record<string, number>);
 
-    console.log(votes);
-
     return reply.send({
       poll: {
         id: poll.id,
